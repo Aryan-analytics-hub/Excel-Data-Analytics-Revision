@@ -1,41 +1,18 @@
-# Excel Data Analytics Revision
+# Week 1 Summary – Excel Text Functions Revision
 
-This repository contains my Excel revision and analytical practice using the Superstore dataset.
+This week was fully focused on mastering Excel Text Functions and developing deeper logical understanding behind text manipulation and parsing.
 
----
+Instead of only memorizing formulas, the focus was on:
 
-## Day 1 — Core Excel Revision
-
-### Functions Practiced
-
-* IF
-* AND
-* OR
-* SUMIF / SUMIFS
-* COUNTIF / COUNTIFS
-* AVERAGEIFS
-
-### Concepts Covered
-
-* Structured References
-* Conditional Aggregation
-* Helper Columns
-* Profit Margin Analysis
-* Pivot Tables
-* Business Insights
-
-### Key Learnings
-
-* Nested IF condition flow
-* Dynamic criteria using `&`
-* High discounts affecting profitability
-* Difference between sales and profitability
+* understanding how formulas work internally
+* learning delimiter traversal
+* dynamic extraction logic
+* parsing text structures
+* handling inconsistent data patterns
 
 ---
 
-## Day 2 — Text Functions & Data Cleaning
-
-### Functions Practiced
+# Functions Practiced
 
 * LEFT
 * RIGHT
@@ -43,47 +20,96 @@ This repository contains my Excel revision and analytical practice using the Sup
 * LEN
 * FIND
 * SEARCH
-* TRIM
-* CLEAN
 * SUBSTITUTE
 * REPLACE
+* TRIM
+* CLEAN
+* REPT
 * EXACT
-* VALUE
-* CONCAT
-* TEXTJOIN
-* ISNUMBER
-
-### Concepts Covered
-
-* Position-based extraction
-* Delimiter handling
-* Dynamic position calculation
-* Data cleaning
-* Case-sensitive vs case-insensitive search
-* Function combinations
-
-### Key Learnings
-
-* `+1` and `-1` for boundary control
-* Hidden vs printable characters
-* Correct output does not always mean correct logic
-* Dynamic parsing using LEN + FIND
-* Difference between SUBSTITUTE and REPLACE
+* UPPER
+* LOWER
+* PROPER
 
 ---
 
-## Dataset Used
+# Advanced Concepts Learned
 
-Sample Superstore Dataset
+## 1. Delimiter Traversal
+
+Learned how to:
+
+* find first, second, third delimiters
+* extract text between delimiters
+* extract text after nth delimiter
+* dynamically handle variable text structures
 
 ---
 
-## Current Goal
+## 2. Dynamic Text Parsing
 
-Building strong Excel foundations before moving toward:
+Built formulas for:
 
-* Data Cleaning
+* extracting first/middle/last names
+* extracting initials dynamically
+* extracting second-last words
+* handling names with varying word counts
+* masking names using REPT
+
+---
+
+## 3. Logical Formula Building
+
+Practiced:
+
+* nested FIND structures
+* IF + ISNUMBER + SEARCH logic
+* IFERROR handling
+* AND / OR based conditions
+* scalable parsing approaches
+
+---
+
+## 4. Data Cleaning Concepts
+
+Worked on:
+
+* removing extra spaces
+* detecting double spaces
+* CLEAN vs TRIM understanding
+* hidden vs printable characters
+* text normalization
+
+---
+
+# Most Important Learning
+
+The biggest realization from this week:
+
+Excel formulas are not just functions —
+they are logical systems used to parse, structure, and manipulate data dynamically.
+
+This week improved:
+
+* computational thinking
+* analytical reasoning
+* debugging ability
+* structural problem solving
+* abstraction thinking in Excel
+
+---
+
+# Next Phase
+
+After completing text functions, the next learning phase will focus on:
+
+* Lookup Functions
+* SUMIFS / COUNTIFS
+* Pivot Tables
 * Dashboards
-* Power BI
-* SQL
-* End-to-End Analytics Projects
+* Data Analysis Workflows
+
+---
+
+# Author
+
+Aryan Kumar

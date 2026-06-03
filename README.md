@@ -88,25 +88,8 @@ The biggest realization from this week:
 Excel formulas are not just functions —
 they are logical systems used to parse, structure, and manipulate data dynamically.
 
-This week improved:
-
-* computational thinking
-* analytical reasoning
-* debugging ability
-* structural problem solving
-* abstraction thinking in Excel
-
 ---
 
-# Next Phase
-
-After completing text functions, the next learning phase will focus on:
-
-* Lookup Functions
-* SUMIFS / COUNTIFS
-* Pivot Tables
-* Dashboards
-* Data Analysis Workflows
 
 ---
 

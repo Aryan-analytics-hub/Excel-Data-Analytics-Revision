@@ -88,6 +88,7 @@ The biggest realization from this week:
 Excel formulas are not just functions —
 they are logical systems used to parse, structure, and manipulate data dynamically.
 
+---
 
 # Week 2 Summary – Logical Functions
 

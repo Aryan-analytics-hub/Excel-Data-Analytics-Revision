@@ -92,18 +92,19 @@ they are logical systems used to parse, structure, and manipulate data dynamical
 
 # Week 2 Summary – Logical Functions
 
-After completing the basic logical functions phase, I realized that logical functions are not really about formulas—they are about decision making.
+After completing the logical functions phase, I realized that logical functions are not really about formulas—they are about decision making.
 
-At first, I saw functions like IF, AND, OR, NOT, IFERROR, and ISNUMBER as separate Excel tools. But while solving questions on the Superstore dataset, I started understanding how they work together to validate data, classify records, detect patterns, and handle exceptions.
+At first, I saw functions like IF, AND, OR, NOT, IFERROR, and ISNUMBER as separate Excel tools. But while solving logical scenarios on the Superstore dataset, I started understanding how they work together to validate data, classify records, detect patterns, handle exceptions, and translate business rules into formulas.
 
 Some of the problems I worked on involved:
 
 * identifying products based on keywords
 * validating customer and product information
 * detecting missing or inconsistent patterns
-* classifying sales, profit, and discount levels
+* classifying sales, profit, quantity, and discount levels
 * checking multiple conditions simultaneously
 * building business-style decision rules
+* creating dynamic classifications using dataset benchmarks
 
 One important lesson was understanding the difference between checking values and checking structure. Instead of extracting text unnecessarily, many problems could be solved by validating the underlying structure of the data itself.
 
@@ -115,7 +116,20 @@ I also learned that:
 * IFERROR makes formulas more robust
 * ISNUMBER combined with SEARCH becomes a powerful pattern-detection technique
 
-The biggest takeaway from this phase was that real-world data is rarely perfect. Writing a formula is usually the easy part; designing logic that works reliably across different scenarios and edge cases is where the actual analytical thinking begins.
+As the questions became more complex, I noticed that the challenge was no longer writing formulas. The real challenge was defining the business rule behind the formula.
+
+For example:
+
+* Should a customer be compared against the overall average or a regional average?
+* What makes a discount "High"?
+* How should edge cases such as Profit = 0 be classified?
+* Should classifications be based on fixed ranges or dynamic benchmarks?
+
+Working through these questions taught me that analytical thinking starts before the formula is written.
+
+Another important lesson came from exploring relationships within the data. While analyzing Sales, Profit, and Discount, I learned that correlation alone is not enough. A high-sales order can still generate a large loss if other factors, such as heavy discounts, are involved. This reinforced the importance of investigating outliers, understanding context, and looking beyond summary metrics.
+
+The biggest takeaway from this phase was that writing a formula is often the easy part. Designing logic that works across different scenarios, edge cases, and business situations is where the actual analytical thinking begins.
 
 This phase strengthened:
 
@@ -124,6 +138,8 @@ This phase strengthened:
 * data validation skills
 * problem decomposition
 * formula debugging
+* business rule design
+* analytical thinking
 
 More importantly, it changed how I view Excel. Instead of seeing formulas as isolated functions, I now see them as tools for building logical systems that help make decisions from data.
 
@@ -131,14 +147,7 @@ More importantly, it changed how I view Excel. Instead of seeing formulas as iso
 
 Sample Superstore Dataset
 
-## Next Phase
-
-Intermediate Logical Functions → Lookup Functions → Data Analysis Workflows
 
 
 
----
 
-# Author
-
-Aryan Kumar

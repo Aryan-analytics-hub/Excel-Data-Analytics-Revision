@@ -105,6 +105,8 @@ Some of the problems I worked on involved:
 * checking multiple conditions simultaneously
 * building business-style decision rules
 * creating dynamic classifications using dataset benchmarks
+* comparing records against category, regional, and overall averages
+* handling edge cases and validating business assumptions
 
 One important lesson was understanding the difference between checking values and checking structure. Instead of extracting text unnecessarily, many problems could be solved by validating the underlying structure of the data itself.
 
@@ -122,12 +124,30 @@ For example:
 
 * Should a customer be compared against the overall average or a regional average?
 * What makes a discount "High"?
-* How should edge cases such as Profit = 0 be classified?
+* How should Profit = 0 be classified?
 * Should classifications be based on fixed ranges or dynamic benchmarks?
+* How wide should an "Average" range be?
+* When does a threshold come from business rules versus data behavior?
 
 Working through these questions taught me that analytical thinking starts before the formula is written.
 
 Another important lesson came from exploring relationships within the data. While analyzing Sales, Profit, and Discount, I learned that correlation alone is not enough. A high-sales order can still generate a large loss if other factors, such as heavy discounts, are involved. This reinforced the importance of investigating outliers, understanding context, and looking beyond summary metrics.
+
+I also learned that a formula returning no results does not automatically mean the formula is wrong. In one scenario, the condition itself became mathematically impossible because a regional benchmark was lower than the overall benchmark. This showed me the importance of validating assumptions and benchmark relationships before debugging formulas.
+
+As I progressed through advanced logical scenarios, I started thinking more like an analyst than an Excel user. Instead of asking:
+
+"Which formula should I use?"
+
+I increasingly found myself asking:
+
+* What benchmark should be used?
+* What classification makes business sense?
+* What does the data distribution suggest?
+* Is this threshold justified by the data?
+* Am I analyzing orders, customers, categories, or regions?
+
+One of the most valuable lessons came from profit classification. Rather than choosing arbitrary thresholds, I explored the profit distribution and identified points where the pattern of profits changed significantly. This helped me understand that good classifications should be supported by data behavior whenever possible.
 
 The biggest takeaway from this phase was that writing a formula is often the easy part. Designing logic that works across different scenarios, edge cases, and business situations is where the actual analytical thinking begins.
 
@@ -139,15 +159,17 @@ This phase strengthened:
 * problem decomposition
 * formula debugging
 * business rule design
+* benchmark analysis
+* classification design
 * analytical thinking
 
 More importantly, it changed how I view Excel. Instead of seeing formulas as isolated functions, I now see them as tools for building logical systems that help make decisions from data.
 
+I also discovered that many advanced business questions require more than logical functions alone. Some problems naturally lead into aggregation, lookup functions, Pivot Tables, and statistical thinking. This helped me understand how different Excel concepts connect together in real-world analysis.
+
 ## Dataset Used
 
 Sample Superstore Dataset
-
-
 
 
 

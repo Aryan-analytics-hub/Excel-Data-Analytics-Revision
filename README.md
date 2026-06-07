@@ -174,18 +174,17 @@ More importantly, it changed how I view Excel. Instead of seeing formulas as iso
 I also discovered that many advanced business questions require more than logical functions alone. Some problems naturally lead into aggregation, lookup functions, Pivot Tables, and statistical thinking. This helped me understand how different Excel concepts connect together in real-world analysis and why choosing the right analytical tool is just as important as writing the correct formula.
 
 Key Insights Discovered
-• Average Sales (299) was much larger than Median Sales (54.5), indicating a heavily right-skewed sales distribution.
-• Several high-sales orders generated significant losses.
-• Heavy discounts frequently appeared in loss-making high-sales transactions.
-• Correlation alone was insufficient to explain profitability patterns.
+*Average Sales (299) was much larger than Median Sales (54.5), indicating a heavily right-skewed sales distribution.
+*Several high-sales orders generated significant losses.
+*Heavy discounts frequently appeared in loss-making high-sales transactions.
+*Correlation alone was insufficient to explain profitability patterns.
 
 Next Phase
-
-• Lookup Functions
-• Aggregation Functions
-• Pivot Tables
-• Statistical Analysis
-• Business Dashboards
+*Lookup Functions
+*Aggregation Functions
+*Pivot Tables
+*Statistical Analysis
+*Business Dashboards
 
 ## Dataset Used
 

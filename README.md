@@ -209,18 +209,20 @@ This helped me understand how different Excel concepts connect together in real-
 
 # 🔍 Week 3 Summary – Lookup Functions (In Progress)
 
-This week introduced the concept of data retrieval and lookup design.
+This week started with learning lookup functions.
 
-While learning VLOOKUP, I discovered that lookup functions are not primarily about formulas. They are about retrieving the correct information from the correct source.
+Initially, I thought lookup functions were just another category of Excel formulas used to retrieve values from tables.
+
+But while solving product and customer lookup questions, I realized that lookup functions are less about formulas and more about understanding relationships within data.
 
 ### Functions Covered
 
 * VLOOKUP ✅
 * HLOOKUP ⚠️ (Deferred)
-* XLOOKUP 🔄 (Upcoming)
-* MATCH ⏳
-* INDEX ⏳
-* INDEX + MATCH ⏳
+* XLOOKUP ✅
+* MATCH ✅
+* INDEX ✅
+* INDEX + MATCH ✅
 
 ---
 
@@ -228,68 +230,122 @@ While learning VLOOKUP, I discovered that lookup functions are not primarily abo
 
 ### 🔹 Lookup Table Design
 
-Created dedicated lookup tables from the Superstore dataset instead of performing lookups directly on transactional data.
+Instead of performing lookups directly on the transaction dataset, I created separate lookup tables.
 
 #### Product Lookup Table
 
+* Product ID
 * Product Name
 * Category
 * Sub-Category
 
-Approximately 9,995 transaction records were reduced to around 1,850 unique product records suitable for lookup operations.
+This reduced thousands of transaction records into a clean reference table suitable for lookups.
 
 #### Customer Lookup Table
 
+* Customer ID
 * Customer Name
 * Segment
 * Region
 
-Approximately 793 unique customers were identified for customer-based lookup operations.
+This helped me understand how lookup tables are built from transactional data.
 
 ---
 
 ### 🔹 Reference Data vs Transaction Data
 
-One of the most important discoveries during this phase.
+One of the most important lessons this week.
 
 #### Reference Data
 
-Attributes that remain stable for a given key:
+Values that remain consistent for a given key.
 
-* Product → Category
-* Product → Sub-Category
-* Customer → Segment
-* Customer → Region
+Examples:
 
-These relationships are suitable for lookup tables because each key maps to a consistent set of attributes.
+* Product ID → Category
+* Product ID → Sub-Category
+* Customer ID → Segment
+
+These relationships are suitable for lookup operations because they remain stable.
 
 #### Transaction Data
 
-Attributes that vary between transactions:
+Values that change from one transaction to another.
+
+Examples:
 
 * Sales
 * Profit
-* Discount
 * Quantity
+* Discount
 
-I learned that transaction-based values cannot simply be converted into lookup tables because they vary from one record to another.
+I learned that these metrics cannot simply be converted into lookup tables because they vary across records.
 
-If such metrics need to be retrieved through lookups, they must first be summarized using aggregation techniques such as Pivot Tables, SUMIFS, AVERAGEIFS, or COUNTIFS.
+---
+
+### 🔹 Lookup Key Reliability
+
+This was probably the most important discovery of the week.
+
+While solving customer lookup questions, I realized that a formula can be technically correct and still lead to a misleading conclusion.
+
+For example:
+
+```text
+Customer ID → Segment
+```
+
+is a reliable relationship because a customer consistently belongs to the same segment.
+
+However:
+
+```text
+Customer Name → State
+```
+
+is not always reliable.
+
+While solving the questions, I found that Aaron Bergman appeared in:
+
+* Texas
+* Washington
+* Oklahoma
+
+This raised an important question:
+
+> Which state should a lookup function return?
+
+The formula was working correctly, but the relationship itself was ambiguous.
+
+This taught me to validate the relationship before trusting the result.
 
 ---
 
 ### 🔹 Data Modeling Mindset
 
-A lookup table should contain:
+A major shift in my thinking happened during this week.
 
-**One Unique Key → One Stable Set of Attributes**
+Earlier I used to think:
 
-This simple idea connects directly to:
+```text
+Question → Formula → Answer
+```
 
-* SQL Joins
-* Power BI Relationships
-* Data Modeling
-* Database Design
+Now I find myself thinking:
+
+```text
+Question
+↓
+What do I know?
+↓
+What do I need?
+↓
+Is the relationship reliable?
+↓
+Then choose the formula
+```
+
+This feels much closer to how databases, SQL joins, and Power BI relationships work.
 
 ---
 
@@ -297,38 +353,25 @@ This simple idea connects directly to:
 
 Lookup functions are not primarily about formulas.
 
-**They are about designing the correct relationship between data sources.**
+They are about understanding whether the data relationship itself makes sense.
 
-The most important lesson was learning that before retrieving information, I must first determine whether the data represents a stable attribute or a transactional metric.
+Before writing a lookup formula, I should first ask:
+
+* Is the lookup key reliable?
+* Does it consistently map to the value being retrieved?
+* Is the relationship one-to-one or one-to-many?
+
+Only then does the formula become meaningful.
 
 ---
 
 # 🔜 Next Phase
 
-* XLOOKUP
-* MATCH
-* INDEX
-* INDEX + MATCH
+* Advanced Lookup Questions
 * Aggregation Functions
 * Pivot Tables
 * Statistical Analysis
 * Business Dashboards
-
----
-
-# 📂 Dataset Used
-
-**Sample Superstore Dataset**
-
-Used throughout the project for:
-
-* Text Parsing
-* Data Cleaning
-* Business Rule Design
-* Classification Analysis
-* Lookup Table Design
-* Data Retrieval
-* Analytical Problem Solving
 
 ---
 
@@ -345,4 +388,4 @@ Build a complete Excel Analytics Project that demonstrates:
 * Statistical Analysis
 * Interactive Dashboards
 
-while documenting the complete learning journey publicly through GitHub.
+while documenting the entire learning journey publicly through GitHub.

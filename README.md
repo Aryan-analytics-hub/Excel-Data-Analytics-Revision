@@ -215,14 +215,16 @@ Initially, I thought lookup functions were just another category of Excel formul
 
 But while solving product and customer lookup questions, I realized that lookup functions are less about formulas and more about understanding relationships within data.
 
-### Functions Covered
+---
 
-* VLOOKUP ✅
-* HLOOKUP ⚠️ (Deferred)
-* XLOOKUP ✅
-* MATCH ✅
-* INDEX ✅
-* INDEX + MATCH ✅
+## Functions Covered
+
+- VLOOKUP ✅
+- HLOOKUP ⚠️ (Deferred)
+- XLOOKUP ✅
+- MATCH ✅
+- INDEX ✅
+- INDEX + MATCH ✅
 
 ---
 
@@ -234,19 +236,19 @@ Instead of performing lookups directly on the transaction dataset, I created sep
 
 #### Product Lookup Table
 
-* Product ID
-* Product Name
-* Category
-* Sub-Category
+- Product ID
+- Product Name
+- Category
+- Sub-Category
 
 This reduced thousands of transaction records into a clean reference table suitable for lookups.
 
 #### Customer Lookup Table
 
-* Customer ID
-* Customer Name
-* Segment
-* Region
+- Customer ID
+- Customer Name
+- Segment
+- Region
 
 This helped me understand how lookup tables are built from transactional data.
 
@@ -262,9 +264,9 @@ Values that remain consistent for a given key.
 
 Examples:
 
-* Product ID → Category
-* Product ID → Sub-Category
-* Customer ID → Segment
+- Product ID → Category
+- Product ID → Sub-Category
+- Customer ID → Segment
 
 These relationships are suitable for lookup operations because they remain stable.
 
@@ -274,10 +276,10 @@ Values that change from one transaction to another.
 
 Examples:
 
-* Sales
-* Profit
-* Quantity
-* Discount
+- Sales
+- Profit
+- Quantity
+- Discount
 
 I learned that these metrics cannot simply be converted into lookup tables because they vary across records.
 
@@ -307,9 +309,9 @@ is not always reliable.
 
 While solving the questions, I found that Aaron Bergman appeared in:
 
-* Texas
-* Washington
-* Oklahoma
+- Texas
+- Washington
+- Oklahoma
 
 This raised an important question:
 
@@ -318,6 +320,18 @@ This raised an important question:
 The formula was working correctly, but the relationship itself was ambiguous.
 
 This taught me to validate the relationship before trusting the result.
+
+---
+
+### 🔹 Composite Keys & Relationship Validation
+
+While solving advanced lookup questions, I learned that combining multiple fields does not automatically create a reliable lookup key.
+
+I discovered that some combinations still contained duplicate records, which led to a more important lesson:
+
+**A correct formula cannot fix an ambiguous relationship.**
+
+Before building a lookup, I should first verify whether the selected key uniquely identifies the information being retrieved. If not, the solution may require additional identifiers, aggregation, or further investigation of the data.
 
 ---
 
@@ -357,35 +371,35 @@ They are about understanding whether the data relationship itself makes sense.
 
 Before writing a lookup formula, I should first ask:
 
-* Is the lookup key reliable?
-* Does it consistently map to the value being retrieved?
-* Is the relationship one-to-one or one-to-many?
+- Is the lookup key reliable?
+- Does it consistently map to the value being retrieved?
+- Is the relationship one-to-one or one-to-many?
 
 Only then does the formula become meaningful.
 
 ---
 
-# 🔜 Next Phase
+## 🔜 Next Phase
 
-* Advanced Lookup Questions
-* Aggregation Functions
-* Pivot Tables
-* Statistical Analysis
-* Business Dashboards
+- Advanced Lookup Questions
+- Aggregation Functions
+- Pivot Tables
+- Statistical Analysis
+- Business Dashboards
 
 ---
 
-# 🎯 Final Goal
+## 🎯 Final Goal
 
 Build a complete Excel Analytics Project that demonstrates:
 
-* Data Cleaning
-* Text Processing
-* Logical Analysis
-* Lookup Functions
-* Aggregation Functions
-* Pivot Tables
-* Statistical Analysis
-* Interactive Dashboards
+- Data Cleaning
+- Text Processing
+- Logical Analysis
+- Lookup Functions
+- Aggregation Functions
+- Pivot Tables
+- Statistical Analysis
+- Interactive Dashboards
 
 while documenting the entire learning journey publicly through GitHub.

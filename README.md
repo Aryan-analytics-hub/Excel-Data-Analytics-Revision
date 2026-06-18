@@ -8,7 +8,7 @@ A structured Excel revision project focused on building analytical thinking thro
 
 * ✅ Week 1 – Text Functions
 * ✅ Week 2 – Logical Functions
-* 🔄 Week 3 – Lookup Functions (In Progress)
+* ✅ Week 3 – Lookup Functions
 * ⏳ Week 4 – Aggregation Functions
 * ⏳ Week 5 – Pivot Tables
 * ⏳ Week 6 – Statistical Analysis
@@ -121,8 +121,6 @@ At first, I saw functions like IF, AND, OR, NOT, IFERROR, and ISNUMBER as separa
 * designing multi-level business classifications
 * evaluating data distributions before creating classification rules
 
-One important lesson was understanding the difference between checking values and checking structure. Instead of extracting text unnecessarily, many problems could be solved by validating the underlying structure of the data itself.
-
 ### Key Function Learnings
 
 * AND checks whether all conditions are satisfied
@@ -130,8 +128,6 @@ One important lesson was understanding the difference between checking values an
 * NOT reverses existing logic
 * IFERROR makes formulas more robust
 * ISNUMBER combined with SEARCH becomes a powerful pattern-detection technique
-
-As the questions became more complex, I noticed that the challenge was no longer writing formulas. The real challenge was defining the business rule behind the formula.
 
 ### Questions That Changed My Thinking
 
@@ -143,31 +139,6 @@ As the questions became more complex, I noticed that the challenge was no longer
 * When does a threshold come from business rules versus data behavior?
 
 Working through these questions taught me that analytical thinking starts before the formula is written.
-
-Another important lesson came from exploring relationships within the data. While analyzing Sales, Profit, and Discount, I learned that correlation alone is not enough. A high-sales order can still generate a large loss if other factors, such as heavy discounts, are involved. This reinforced the importance of investigating outliers, understanding context, and looking beyond summary metrics.
-
-I also learned that a formula returning no results does not automatically mean the formula is wrong. In one scenario, the condition itself became mathematically impossible because a regional benchmark was lower than the overall benchmark. This showed me the importance of validating assumptions and benchmark relationships before debugging formulas.
-
-One of the most valuable lessons came from profit classification. Rather than choosing arbitrary thresholds, I explored the profit distribution and identified points where the pattern of profits changed significantly. This helped me understand that good classifications should be supported by data behavior whenever possible.
-
-A threshold is more meaningful when it reflects a visible change in the distribution rather than a random multiple of an average.
-
-As I progressed through advanced logical scenarios, I started thinking more like an analyst than an Excel user.
-
-Instead of asking:
-
-> Which formula should I use?
-
-I increasingly found myself asking:
-
-* What benchmark should be used?
-* What classification makes business sense?
-* What does the data distribution suggest?
-* Is this threshold justified by the data?
-* Am I analyzing orders, customers, categories, or regions?
-* Is this actually a logical-function problem, or does it belong to aggregation or lookup functions?
-
-I also realized that an average is often better treated as a range rather than a single value. The width of that range can dramatically change the classification results, which means business definitions have a direct impact on analytical outcomes.
 
 ---
 
@@ -188,43 +159,37 @@ Writing a formula is often the easy part.
 
 ### Skills Strengthened
 
-* logical reasoning
-* conditional thinking
-* data validation skills
-* problem decomposition
-* formula debugging
-* business rule design
-* benchmark analysis
-* classification design
-* distribution analysis
-* analytical thinking
-
-More importantly, it changed how I view Excel. Instead of seeing formulas as isolated functions, I now see them as tools for building logical systems that help make decisions from data.
-
-I also discovered that many advanced business questions require more than logical functions alone. Some problems naturally lead into aggregation, lookup functions, Pivot Tables, and statistical thinking.
-
-This helped me understand how different Excel concepts connect together in real-world analysis and why choosing the right analytical tool is just as important as writing the correct formula.
+* Logical Reasoning
+* Conditional Thinking
+* Data Validation
+* Problem Decomposition
+* Formula Debugging
+* Business Rule Design
+* Benchmark Analysis
+* Classification Design
+* Distribution Analysis
+* Analytical Thinking
 
 ---
 
-# 🔍 Week 3 Summary – Lookup Functions (In Progress)
+# 🔍 Week 3 Summary – Lookup Functions
 
 This week started with learning lookup functions.
 
-Initially, I thought lookup functions were just another category of Excel formulas used to retrieve values from tables.
+Initially, I thought lookup functions were simply Excel formulas used to retrieve values from tables.
 
-But while solving product and customer lookup questions, I realized that lookup functions are less about formulas and more about understanding relationships within data.
+However, while solving increasingly complex lookup scenarios, I realized that lookup functions are not primarily about formulas—they are about understanding relationships within data.
 
 ---
 
 ## Functions Covered
 
-- VLOOKUP ✅
-- HLOOKUP ⚠️ (Deferred)
-- XLOOKUP ✅
-- MATCH ✅
-- INDEX ✅
-- INDEX + MATCH ✅
+* VLOOKUP ✅
+* HLOOKUP ⚠️ (Deferred)
+* XLOOKUP ✅
+* MATCH ✅
+* INDEX ✅
+* INDEX + MATCH ✅
 
 ---
 
@@ -232,64 +197,58 @@ But while solving product and customer lookup questions, I realized that lookup 
 
 ### 🔹 Lookup Table Design
 
-Instead of performing lookups directly on the transaction dataset, I created separate lookup tables.
+Instead of performing lookups directly on the transaction dataset, I created dedicated lookup tables for products and customers.
 
 #### Product Lookup Table
 
-- Product ID
-- Product Name
-- Category
-- Sub-Category
-
-This reduced thousands of transaction records into a clean reference table suitable for lookups.
+* Product ID
+* Product Name
+* Category
+* Sub-Category
 
 #### Customer Lookup Table
 
-- Customer ID
-- Customer Name
-- Segment
-- Region
+* Customer ID
+* Customer Name
+* Segment
+* Region
 
-This helped me understand how lookup tables are built from transactional data.
+This helped me understand how lookup tables are built from transactional data and why reference tables are important for scalable analysis.
 
 ---
 
 ### 🔹 Reference Data vs Transaction Data
 
-One of the most important lessons this week.
+One of the biggest lessons from this week was understanding that not every column belongs inside a lookup table.
 
 #### Reference Data
 
-Values that remain consistent for a given key.
-
 Examples:
 
-- Product ID → Category
-- Product ID → Sub-Category
-- Customer ID → Segment
+* Product ID → Product Name
+* Product ID → Category
+* Product ID → Sub-Category
+* Customer ID → Segment
+* Customer ID → Region
 
-These relationships are suitable for lookup operations because they remain stable.
+These relationships remain stable and are suitable for lookup operations.
 
 #### Transaction Data
 
-Values that change from one transaction to another.
-
 Examples:
 
-- Sales
-- Profit
-- Quantity
-- Discount
+* Sales
+* Profit
+* Discount
+* Quantity
 
-I learned that these metrics cannot simply be converted into lookup tables because they vary across records.
+These values change from transaction to transaction and therefore cannot always be treated as lookup attributes.
 
 ---
 
 ### 🔹 Lookup Key Reliability
 
-This was probably the most important discovery of the week.
-
-While solving customer lookup questions, I realized that a formula can be technically correct and still lead to a misleading conclusion.
+A formula can be technically correct while the relationship itself is unreliable.
 
 For example:
 
@@ -297,7 +256,7 @@ For example:
 Customer ID → Segment
 ```
 
-is a reliable relationship because a customer consistently belongs to the same segment.
+is a reliable relationship.
 
 However:
 
@@ -305,56 +264,107 @@ However:
 Customer Name → State
 ```
 
-is not always reliable.
+can become ambiguous.
 
-While solving the questions, I found that Aaron Bergman appeared in:
+While working through lookup questions, I discovered that Aaron Bergman appeared across multiple states, which raised an important question:
 
-- Texas
-- Washington
-- Oklahoma
+> Which state should the lookup return?
 
-This raised an important question:
-
-> Which state should a lookup function return?
-
-The formula was working correctly, but the relationship itself was ambiguous.
-
-This taught me to validate the relationship before trusting the result.
+This taught me that validating relationships is often more important than writing formulas.
 
 ---
 
-### 🔹 Composite Keys & Relationship Validation
+### 🔹 Composite Keys
 
-While solving advanced lookup questions, I learned that combining multiple fields does not automatically create a reliable lookup key.
+As the questions became more advanced, I encountered situations where a single field could not uniquely identify a record.
 
-I discovered that some combinations still contained duplicate records, which led to a more important lesson:
+This led to experimenting with composite keys such as:
 
-**A correct formula cannot fix an ambiguous relationship.**
+* Customer ID + Product ID
+* Order ID + Product ID
 
-Before building a lookup, I should first verify whether the selected key uniquely identifies the information being retrieved. If not, the solution may require additional identifiers, aggregation, or further investigation of the data.
+While investigating duplicates, I learned that reducing duplicates does not automatically make a field a valid business key.
+
+A field can help distinguish records without actually being the true identifier of a business event.
+
+---
+
+### 🔹 Duplicate Investigation
+
+One of the most valuable lessons came from investigating duplicate records.
+
+Instead of immediately adding more columns to remove duplicates, I learned to ask:
+
+* Why do duplicates exist?
+* Are they true duplicates?
+* Are they separate business events?
+* Is the relationship actually one-to-one?
+
+I discovered situations where:
+
+```text
+Order ID + Product ID
+```
+
+was nearly unique but still contained a small number of duplicate combinations.
+
+Rather than blindly forcing uniqueness, I investigated the data and documented the limitation.
+
+This shifted my focus from formula writing to data investigation.
+
+---
+
+### 🔹 Lookup Dashboard Development
+
+To complete the lookup module, I built a mini lookup dashboard.
+
+The dashboard allows users to:
+
+* Select an Order ID
+* Select a Product ID
+
+and dynamically retrieve:
+
+* Customer Name
+* Customer ID
+* Segment
+* Region
+* Product Name
+* Category
+* Sub-Category
+* Sales
+* Profit
+* Discount
+* Quantity
+
+using lookup functions and composite-key logic.
+
+This exercise connected all lookup concepts into a practical business scenario.
 
 ---
 
 ### 🔹 Data Modeling Mindset
 
-A major shift in my thinking happened during this week.
+A major change in my thinking occurred during this week.
 
-Earlier I used to think:
+Earlier I approached problems as:
 
 ```text
 Question → Formula → Answer
 ```
 
-Now I find myself thinking:
+Now I approach them as:
 
 ```text
 Question
 ↓
-What do I know?
+What data is available?
 ↓
-What do I need?
+What relationship exists?
 ↓
 Is the relationship reliable?
+↓
+What key should be used?
 ↓
 Then choose the formula
 ```
@@ -365,41 +375,61 @@ This feels much closer to how databases, SQL joins, and Power BI relationships w
 
 ## 🎯 Biggest Takeaway
 
-Lookup functions are not primarily about formulas.
+Lookup functions are not primarily about retrieving values.
 
-They are about understanding whether the data relationship itself makes sense.
+They are about understanding relationships.
 
 Before writing a lookup formula, I should first ask:
 
-- Is the lookup key reliable?
-- Does it consistently map to the value being retrieved?
-- Is the relationship one-to-one or one-to-many?
+* Is the lookup key reliable?
+* Is the relationship one-to-one or one-to-many?
+* Does the data support the conclusion?
+* Am I retrieving reference data or transaction data?
 
 Only then does the formula become meaningful.
 
 ---
 
-## 🔜 Next Phase
+### Skills Strengthened
 
-- Advanced Lookup Questions
-- Aggregation Functions
-- Pivot Tables
-- Statistical Analysis
-- Business Dashboards
+* Lookup Table Design
+* Relationship Validation
+* Composite Key Creation
+* Duplicate Investigation
+* Data Modeling
+* Dashboard Construction
+* Formula Debugging
+* Analytical Thinking
+* Business Logic Evaluation
+
+The most important lesson from this week was:
+
+> A correct formula cannot fix an unreliable relationship.
+
+Understanding the structure of the data is often more important than writing the formula itself.
 
 ---
 
-## 🎯 Final Goal
+# 🔜 Next Phase
+
+* Aggregation Functions
+* Pivot Tables
+* Statistical Analysis
+* Business Dashboards
+
+---
+
+# 🎯 Final Goal
 
 Build a complete Excel Analytics Project that demonstrates:
 
-- Data Cleaning
-- Text Processing
-- Logical Analysis
-- Lookup Functions
-- Aggregation Functions
-- Pivot Tables
-- Statistical Analysis
-- Interactive Dashboards
+* Data Cleaning
+* Text Processing
+* Logical Analysis
+* Lookup Functions
+* Aggregation Functions
+* Pivot Tables
+* Statistical Analysis
+* Interactive Dashboards
 
 while documenting the entire learning journey publicly through GitHub.

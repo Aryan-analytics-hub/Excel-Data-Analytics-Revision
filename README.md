@@ -408,6 +408,148 @@ The most important lesson from this week was:
 
 Understanding the structure of the data is often more important than writing the formula itself.
 
+--- 
+
+# 📊 Week 4 Summary – Aggregation Functions
+
+This week focused on aggregation functions and understanding how businesses answer questions using data.
+
+Initially, functions like SUM, COUNT, and AVERAGE seemed straightforward. However, while solving real-world scenarios, I realized that aggregation is less about calculations and more about deciding which records should be included in those calculations.
+
+---
+
+## Functions Practiced
+
+* SUMIF
+* COUNTIF
+* AVERAGEIF
+* SUMIFS
+* COUNTIFS
+* AVERAGEIFS
+* SUMPRODUCT
+* SUBTOTAL
+
+---
+
+## Key Learnings
+
+### 🔹 Conditional Aggregation
+
+Learned how to calculate totals, counts, and averages based on specific conditions.
+
+Examples:
+
+* Total Sales in West Region
+* Count of Loss-Making Orders
+* Average Profit for Technology Products
+
+---
+
+### 🔹 Multi-Criteria Analysis
+
+Used SUMIFS, COUNTIFS, and AVERAGEIFS to answer questions involving multiple conditions.
+
+Examples:
+
+* Region = West
+* Segment = Consumer
+* Profit > 0
+
+---
+
+### 🔹 Business Language to Logic
+
+Learned to convert business terms into conditions:
+
+* Profitable → Profit > 0
+* Loss-Making → Profit < 0
+* Discounted → Discount > 0
+
+This helped me think more like an analyst rather than simply writing formulas.
+
+---
+
+### 🔹 SUMPRODUCT and Boolean Logic
+
+Discovered how SUMPRODUCT can perform advanced calculations using logical conditions.
+
+Key concept:
+
+* TRUE = 1
+* FALSE = 0
+
+This helped me understand how Excel handles AND and OR logic internally.
+
+---
+
+### 🔹 Weighted Averages
+
+Learned the weighted average pattern:
+
+```excel
+=SUMPRODUCT(Value,Weight)/SUM(Weight)
+```
+
+Applied it to:
+
+* Weighted Average Discount by Sales
+* Weighted Average Quantity by Sales
+* Weighted Average Profit by Sales
+
+---
+
+### 🔹 Contribution Analysis
+
+Calculated metrics such as:
+
+* Technology Profit Contribution %
+* Category Contribution to Total Profit
+
+This shifted my focus from:
+
+```text
+How much?
+```
+
+to:
+
+```text
+How important?
+```
+
+---
+
+### 🔹 Filter-Aware Calculations
+
+Learned how SUBTOTAL differs from SUM by responding to filters and only calculating visible records.
+
+---
+
+## 🎯 Biggest Takeaway
+
+Aggregation functions are not just about calculations.
+
+They are about identifying the right records, applying the correct conditions, and answering business questions with data.
+
+---
+
+### Skills Strengthened
+
+* Conditional Aggregation
+* Multi-Criteria Analysis
+* SUMPRODUCT
+* Weighted Averages
+* Contribution Analysis
+* Boolean Logic
+* Business Thinking
+* Analytical Thinking
+
+---
+
+### Most Important Lesson
+
+> Before calculating a number, decide which records deserve to be included in that number.
+
 ---
 
 # 🔜 Next Phase

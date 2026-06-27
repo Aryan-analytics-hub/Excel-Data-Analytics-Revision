@@ -561,6 +561,81 @@ They are about identifying the right records, applying the correct conditions, a
 
 ---
 
+
+--- 
+# 📊 Week 4 Summary – Aggregation Functions
+
+Week 4 focused on aggregation functions and marked a transition from simply writing formulas to solving business problems using data.
+
+I started with basic aggregation functions and gradually moved to conditional aggregation using multiple criteria. As I progressed, I learned how to calculate weighted metrics, contribution analysis, and filter-aware calculations using SUMPRODUCT and SUBTOTAL.
+
+The most valuable lesson of this week was understanding that aggregation is not just about calculations—it is about selecting the right records, choosing meaningful metrics, and answering business questions with evidence.
+
+---
+
+## Functions Covered
+
+- ✅ SUMIF
+- ✅ COUNTIF
+- ✅ AVERAGEIF
+- ✅ SUMIFS
+- ✅ COUNTIFS
+- ✅ AVERAGEIFS
+- ✅ SUMPRODUCT
+- ✅ SUBTOTAL
+
+---
+
+## Key Learnings
+
+- Learned the difference between single-criteria and multi-criteria aggregation.
+- Understood how to translate business language into logical conditions (e.g., **Profitable → Profit > 0**, **Discounted → Discount > 0**).
+- Used **SUMPRODUCT** to perform weighted averages, contribution analysis, and conditional calculations.
+- Learned that ratio metrics such as **Profit Margin** should be calculated by aggregating the numerator and denominator first rather than summing individual ratios.
+- Understood the difference between **transaction-level metrics** and **category-level metrics**.
+- Learned to calculate weighted averages using the pattern:
+
+```excel
+=SUMPRODUCT(Value, Weight)/SUM(Weight)
+```
+
+- Used **SUBTOTAL** to perform filter-aware calculations.
+- Solved business case studies by combining multiple metrics instead of relying on a single calculation.
+
+---
+
+## Skills Strengthened
+
+- Conditional Aggregation
+- Multi-Criteria Analysis
+- Weighted Average Calculations
+- Contribution Analysis
+- Boolean Logic with SUMPRODUCT
+- Ratio Metrics
+- Business Interpretation
+- Analytical Thinking
+
+---
+
+## Biggest Takeaway
+
+This week changed the way I approach data analysis.
+
+Instead of asking:
+
+```text
+Which formula should I use?
+```
+
+I started asking:
+
+```text
+What is the business trying to measure?
+```
+
+That shift helped me move beyond Excel formulas and begin thinking more like a data analyst.
+---
+
 # 🎯 Final Goal
 
 Build a complete Excel Analytics Project that demonstrates:
